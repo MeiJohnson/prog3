@@ -1,4 +1,4 @@
-# Заголовок1
+# MeiJohnson aka Анастасия Царулкова
 
 + Figma
 + Haskell
