@@ -1,8 +1,8 @@
 # Заголовок1
 
-*Figma
-*Haskell
-*Linux
++ Figma
++ Haskell
++ Linux
 
 [Моё веб-портфолио](https://meijohnson.github.io/webportfolio/)
 
