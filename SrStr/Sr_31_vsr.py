@@ -4,15 +4,17 @@ import random
 random.seed(version=2)
 
 flag = False
-guess_num = random.randint(0,1000)
+start = int(input("Введите начало интервала "))
+end = int(input("Введите конец интервала "))
+guess_num = random.randint(start,end)
+
 while flag != True:
-    s = "Ваше число {}".format(guess_num)
+    num = int(input("Введите предполагаемое число"))
+    s = "Ваше число {}.".format(num)
     print(s)
-    ans1 = str(input("Ответ(Да/Нет): "))
-    if ans1 == "Да":
+    
+    if guess_num == num:
+        print("Вы угадали. Поздравляю!")
         flag = True
-    ans2 = str(input("Загаданное число больше чем это?(Да/Нет) "))
-    if ans2 == "Да":
-        guess_num += 1
     else:
-        guess_num -= 1
+        print("Вы не угадали.")
