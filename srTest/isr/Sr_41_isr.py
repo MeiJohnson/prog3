@@ -50,8 +50,9 @@ def main():
     data_dict = json.load(f)
 
   test_func(json_table,data_dict)
-  """
-  for el in table:
+  
+  t = json_table(data_dict)
+  for el in t:
     print(el)
-  """
+  
 main()

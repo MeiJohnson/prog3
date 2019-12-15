@@ -44,7 +44,7 @@ for line in lines:
         ss2 = ss.replace("\"","")
         id_list.append({what:ss2})
 
-print(id_list)
+# print(id_list)
 
 # Как только мы считаем значения их имеет смысл положить в какую-нибудь структуру данных
 
@@ -63,20 +63,18 @@ handle.close()
 # В документации есть хороший пример с демонстрацией записи в csv файл:
 
 import csv
+import json
+
+with open('MOCKDATA.json') as f:
+    data_dict = json.load(f)
+print(data_dict[0]['first_name'])
+print(data_dict[0].values())
+
 with open('eggs.csv', 'w', newline='') as csvfile:
-    spamwriter = csv.writer(
-        csvfile, delimiter=' ', quotechar='|', quoting = csv.QUOTE_MINIMAL)
-    spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
-    spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
-# При выполнении кода выше будет создан eggs.csv файл с содержимым
-# проанализируйте его содержимое и разберитесь почему так написано
+    jsonwriter = csv.writer(
+        csvfile, delimiter=',', quotechar='"', quoting = csv.QUOTE_MINIMAL)
+    jsonwriter.writerow(data_dict[0].keys())
+    keys = data_dict[0].keys()
+    for el in data_dict:
+        jsonwriter.writerow(el.values())
 
-# конструкция with .... as csvfile называется менеджером контекста, мы поговорим о нем дополнительно на лекции, а пока можно сказать, что он позволяет удобно работать с файлом не указывая каждый раз переменную с файловым дескриптором
-
-# Вопрос 3
-# Разберитесь самостоятельно, что означают параметры у методов open, writer (newline, delimiter, quotechar, quoting)
-
-# Вопрос 4
-# Какие значения у этих параметров должны быть в нашем скрипте, если мы хотим сохранять данные в csv файле, где значения разделяются _точкой с запятой_, а значения, содержащие пробелы или специальные символы (например, одинарные кавычки) были обернуты в двойные кавычки ("d'Lux")
-
-# Инструкция writerow позволяет записать значения в файл, нам необходимо использовать этот метод, итерируясь по той структуре, которая была создана после считывания файла MOCK_DATA.json

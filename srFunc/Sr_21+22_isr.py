@@ -44,7 +44,7 @@ def printRow(lst, *args):
     row_length = len(result)
     print('-'*row_length)
     print(result)
-
+    
 
 def main():
     A = [0, 0, 0, 0, 1, 1, 1, 1]
@@ -63,3 +63,4 @@ def main():
         ans6 = logic_values(lambda a, b: a or b, ans5, ans4)
         printRow(temp_list, A[el], B[el], C[el],
                  ans1, ans2, ans3, ans4, ans5, ans6)
+main()

@@ -1,4 +1,13 @@
 #Угадай число
+"""
+Царулкова Анастасия
+группа 2 подгруппа 3
+
+Задание 3.1 ВСР
+
+Здесь представлена программа, "Угадай число".
+"""
+
 import random
 
 random.seed(version=2)
@@ -9,7 +18,7 @@ end = int(input("Введите конец интервала "))
 guess_num = random.randint(start,end)
 
 while flag != True:
-    num = int(input("Введите предполагаемое число"))
+    num = int(input("Введите предполагаемое число "))
     s = "Ваше число {}.".format(num)
     print(s)
     
