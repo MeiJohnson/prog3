@@ -29,7 +29,7 @@ import unittest
 
 class TestFunc(unittest.TestCase):
   def setUp(self):
-      with open('/home/vasya/Документы/Github/prog3/srTest/vsr/MOCKDATA.json') as f:
+      with open('MOCKDATA.json') as f:
           data_dict = json.load(f)
       self.data = data_dict
   
@@ -38,6 +38,7 @@ class TestFunc(unittest.TestCase):
 
   def test_istuple(self):
       self.assertIs(type(json_table(self.data)),list)
+  
   def test_in(self):
       self.assertIn(json_table(self.data)[1], 'familyname')      
 
